@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <device>
+    <deviceType>urn:schemas-micasaverde-com:device:RokuControl:1</deviceType>
+    <staticJson>D_RokuControl1.json</staticJson> 
+    <friendlyName>Roku Control</friendlyName>
+    <manufacturer>Roku</manufacturer>
+    <manufacturerURL>http://www.roku.com</manufacturerURL>
+    <modelDescription>Roku Control</modelDescription>
+    <modelName>Rokucontrol</modelName>
+    <modelNumber>1.0</modelNumber>
+    <protocol>raw</protocol>
+    <handleChildren>1</handleChildren>
+
+    <implementationList>
+        <implementationFile>I_RokuControl1.xml</implementationFile>
+    </implementationList>
+	
+    <serviceList>
+      <service>
+        <serviceType>urn:micasaverde-com:service:RokuControl:1</serviceType>
+        <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+        <SCPDURL>S_RokuControl1.xml</SCPDURL>
+      </service>
+      <service>
+        <serviceType>urn:micasaverde-com:service:DiscretePower:1</serviceType>
+        <serviceId>urn:micasaverde-com:serviceId:DiscretePower1</serviceId>
+        <SCPDURL>S_DiscretePower1.xml</SCPDURL>
+      </service>
+      <service>
+        <serviceType>urn:micasaverde-com:service:TogglePower:1</serviceType>
+        <serviceId>urn:micasaverde-com:serviceId:TogglePower1</serviceId>
+        <SCPDURL>S_TogglePower1.xml</SCPDURL>
+      </service>
+      <service>
+        <serviceType>urn:micasaverde-com:service:Volume:1</serviceType>
+        <serviceId>urn:micasaverde-com:serviceId:Volume1</serviceId>
+        <SCPDURL>S_Volume1.xml</SCPDURL>
+      </service>
+    </serviceList>
+  </device>
+</root>

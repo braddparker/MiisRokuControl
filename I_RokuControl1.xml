@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<implementation>
+   <files>L_RokuControl1.lua</files>
+    <settings>
+        <protocol>raw</protocol>
+    </settings>
+
+    <incoming>
+        <lua>
+            local response = tostring(lul_data)
+
+            luup.log("Response:" .. response)
+        </lua>
+    </incoming>
+
+    <startup>rokuControlStartup</startup>
+
+    <actionList>
+        
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>UpdateInfo</name>
+            <run>
+                queryDeviceInfo(true)
+            </run>
+        </action>
+      
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>InputTuner</name>
+            <run>
+                cmdSendKeyPress("InputTuner")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+      
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>InputHDMI1</name>
+            <run>
+                cmdSendKeyPress("InputHDMI1")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+        
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>InputHDMI2</name>
+            <run>
+                cmdSendKeyPress("InputHDMI2")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>InputHDMI3</name>
+            <run>
+                cmdSendKeyPress("InputHDMI3")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>InputHDMI4</name>
+            <run>
+                cmdSendKeyPress("InputHDMI4")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+      
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>InputAV1</name>
+            <run>
+                cmdSendKeyPress("InputAV1")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>SetPowerMode</name>
+            <run>
+               if (lul_settings.newPowerMode == "On") then
+                  wakeOnLan()
+                  cmdSendKeyPress("PowerOn")
+               elseif (lul_settings.newPowerMode == "Off") then
+                  cmdSendKeyPress("PowerOff")
+               end
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action> 
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:DiscretePower1</serviceId>
+            <name>Off</name>
+            <run>
+                cmdSendKeyPress("PowerOff")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:DiscretePower1</serviceId>
+            <name>On</name>
+            <run>
+               wakeOnLan()
+               cmdSendKeyPress("PowerOn")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:TogglePower1</serviceId>
+            <name>OnOff</name>
+            <run>
+               wakeOnLan()
+               cmdSendKeyPress("Power")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+      
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Back</name>
+            <run>
+                cmdSendKeyPress("Back")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Down</name>
+            <run>
+                cmdSendKeyPress("Down")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Home</name>
+            <run>
+                cmdSendKeyPress("Home")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Left</name>
+            <run>
+                cmdSendKeyPress("Left")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Info</name>
+            <run>
+                cmdSendKeyPress("Info")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Right</name>
+            <run>
+                cmdSendKeyPress("Right")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Backspace</name>
+            <run>
+                cmdSendKeyPress("Backspace")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+      
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Enter</name>
+            <run>
+                cmdSendKeyPress("Enter")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+      
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Select</name>
+            <run>
+                cmdSendKeyPress("Select")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Up</name>
+            <run>
+                cmdSendKeyPress("Up")
+            </run> 
+            <job>
+                rokuControlPoll("command")
+            </job>
+       </action>
+      
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:Volume1</serviceId>
+            <name>Down</name>
+            <run>
+                cmdSendKeyPress("VolumeDown")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:Volume1</serviceId>
+            <name>Mute</name>
+            <run>
+                cmdSendKeyPress("VolumeMute")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:Volume1</serviceId>
+            <name>Up</name>
+            <run>
+                cmdSendKeyPress("VolumeUp")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+      
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:HaDevice1</serviceId>
+            <name>Poll</name>
+            <run>
+                rokuControlPoll()
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:HaDevice1</serviceId>
+            <name>SetPollFrequency</name>
+            <run>
+                rokuControlRefreshPoll()
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>SetPlayMode</name>
+            <run>
+               if (lul_settings.newPlayMode == "Fwd") then
+                  cmdSendKeyPress("Fwd")
+               elseif (lul_settings.newPlayMode == "Play") then
+                  cmdSendKeyPress("Fwd")
+               elseif (lul_settings.newPlayMode == "Rev") then
+                  cmdSendKeyPress("Fwd")
+               end
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+        
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>FastForward</name>
+            <run>
+                cmdSendKeyPress("Fwd")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>PlayPause</name>
+            <run>
+                cmdSendKeyPress("Play")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Rewind</name>
+            <run>
+                cmdSendKeyPress("Rev")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>InstantReplay</name>
+            <run>
+                cmdSendKeyPress("InstantReplay")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>FindRemote</name>
+            <run>
+                cmdSendKeyPress("FindRemote")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>ChannelDown</name>
+            <run>
+                cmdSendKeyPress("ChannelDown")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>ChannelUp</name>
+            <run>
+                cmdSendKeyPress("ChannelUp")
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>LaunchApp</name>
+            <run>
+              cmdLaunch(lul_settings.AppId)
+            </run>
+        </action>
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Install</name>
+            <run>
+              cmdInstall(lul_settings.AppId)
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>Search</name>
+            <run>
+              cmdSearch(lul_settings.Keyword or "", 
+                        lul_settings.Title or "", 
+                        lul_settings.Type or "", 
+                        lul_settings.Tmsid or "", 
+                        lul_settings.Season or "",  
+                        lul_settings.ShowUnavailable or 0, 
+                        lul_settings.MatchAny or 0, 
+                        lul_settings.ProviderId or "", 
+                        lul_settings.Provider or "",  
+                        lul_settings.Launch or 0)
+              rokuControlPoll("command")
+         </run>
+        </action>
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:RokuControl1</serviceId>
+            <name>CharacterInput</name>
+            <run>
+                cmdSendKeyPress("lit_" .. urlEncode(lul_settings.char))
+            </run>
+            <job>
+                rokuControlPoll("command")
+            </job>
+        </action>
+    </actionList>
+</implementation>
